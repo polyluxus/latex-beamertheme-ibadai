@@ -1,4 +1,4 @@
-#latex-beamertheme-ibadai
+# latex-beamertheme-ibadai
 
 This repository contains a theme for the documentclass
 [`beamer`](https://ctan.org/tex-archive/macros/latex/contrib/beamer).
@@ -12,7 +12,7 @@ There are a few options, which can be used to change the layouts.
 Demonstration files are comtained in [`/demo/`](./demo); 
 for convenience, some screenshots are detailed below.
 
-##Installation
+## Installation
 
 Install the theme like you would install any other `.sty` 
 by putting it somewhere, where your distribution can find it.
@@ -21,7 +21,7 @@ which is going to be compiled.
 Therefore the demonstration directory containes symbolic links
 to the main directory's files.
 
-##Usage
+## Usage
 
 The following minimum working example exemplarily shows how to use this repository.
 
@@ -62,7 +62,7 @@ The following minimum working example exemplarily shows how to use this reposito
 
 ![mwe preview](./demo/mwe/mwe.preview.png)
 
-##Options
+## Options
 
 There is a default (dark) colour scheme, and a light version.
 An alternative titlepage can be requested.
@@ -74,28 +74,28 @@ This is done by setting
 \usetheme[option]{Mito}
 ```
 
-###Default (dark colour scheme)
+### Default (dark colour scheme)
 
 Without any options, the following general layout will be achieved:
 
 ![talk-default](./demo/talk-default/talk-default-demo.s-preview.png)
 
-###Light colour scheme
+### Light colour scheme
 
 Invoking it with `light` will produce:
 ![talk-light-default](./demo/talk-light-default/talk-lgtxdef-demo.s-preview.png)
 
-###Alternative title with dark colour scheme
+### Alternative title with dark colour scheme
 
 Invoking it with `dark,alttitle` will produce
 ![talk-dark-alt](./demo/talk-dark-alt/talk-drkxalt-demo.s-preview.png)
 
-###Alternative title with dark colour scheme
+### Alternative title with dark colour scheme
 
 Invoking it with `light,alttitle` will produce
 ![talk-light-alt](./demo/talk-light-alt/talk-lgtxalt-demo.s-preview.png)
 
-###Poster
+### Poster
 
 The poster style is invoked with `poster` and looks something like this:
 ![poster](./demo/poster/poster-demo.s-preview.png)
