@@ -12,6 +12,8 @@ There are a few options, which can be used to change the layouts.
 Demonstration files are comtained in [`/demo/`](./demo); 
 for convenience, some screenshots are detailed below.
 
+This is currently awaiting [a review on codereview stack exchange](https://codereview.stackexchange.com/q/188168/92423).
+
 ## Installation
 
 Install the theme like you would install any other `.sty` 
