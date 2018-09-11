@@ -1,15 +1,14 @@
-
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemeMito}[2016/12/12]  
+\ProvidesPackage{beamerthemeMito}[2018/09/11 v1.1 Mito - A theme for the beamer class]  
 
 %%%%%
 % Required packages to be loaded
 %
 \RequirePackage{adjustbox}
-\RequirePackage{etoolbox}
 
 %%%%%
 % Create toggles for options
+% (false by default)
 %
 \providetoggle{poster}
 \providetoggle{alternativetitle}
@@ -18,13 +17,28 @@
 %%%%%
 % List options
 %
-\DeclareOption{beamer}{\togglefalse{poster}}
-\DeclareOption{alttitle}{\toggletrue{alternativetitle}}
-\DeclareOption{poster}{\toggletrue{poster}}
-\DeclareOption{light}{\toggletrue{light}}
-\DeclareOption{dark}{\togglefalse{light}}
-\DeclareOption*{\PackageWarning{beamerthemeMito}{Unknown ‘\CurrentOption’}}
-\ExecuteOptions{beamer,dark}
+\DeclareOption{beamer}{%
+  \PassOptionsToPackage{beamer}{beamerfontthemeibadai}%
+  \togglefalse{poster}%
+}
+\DeclareOption{alttitle}{%
+  \toggletrue{alternativetitle}%
+}
+\DeclareOption{poster}{%
+  \PassOptionsToPackage{poster}{beamerfontthemeibadai}%
+  \toggletrue{poster}%
+}
+\DeclareOption{light}{%
+  \PassOptionsToPackage{light}{beamercolorthemeibadai}%
+  \toggletrue{light}%
+}
+\DeclareOption{dark}{%
+  \PassOptionsToPackage{dark}{beamercolorthemeibadai}%
+  \togglefalse{light}%
+}
+\DeclareOption*{%
+  \PackageWarning{beamerthemeMito}{Unknown ‘\CurrentOption’}%
+}
 \ProcessOptions\relax
 
 %%%%%
@@ -33,25 +47,15 @@
 \newlength{\normaltextsize}
 \AtBeginDocument{\setlength{\normaltextsize}{\f@size pt}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%
-% Predefined Fonts and Colours
+% Load subpackages, predefined fonts and colours
 %
 % Both themes (dark/light) use the same palette,
 % the difference is only that the templates for 
-% the title(s) switch fg and bg
-\iftoggle{light}{
-  \usecolortheme[light]{ibadai}
-}{%
-  \usecolortheme{ibadai}
-}
-% Poster uses larger fonts for title, author, etc
-\iftoggle{poster}{%
-  \usefonttheme[poster]{ibadai}
-}{%
-  \usefonttheme[beamer]{ibadai}
-}
+% the title(s) switch fg and bg, dark is loaded by default (see below)
+%
+\usecolortheme{ibadai}
+\usefonttheme{ibadai}
 
 %%%%%
 % Modify Inner theme
@@ -76,8 +80,6 @@
 %%%%%
 % Modify Outer theme
 %
-\useoutertheme{default} %fallback
-
 % Don't use navigation symbols
 \beamertemplatenavigationsymbolsempty
 
@@ -89,9 +91,9 @@
 % the title for a poster
 \defbeamertemplate{headline}{ibadai-poster}{%
   \begin{beamercolorbox}%
-        [wd=1\paperwidth,sep=0.02\paperwidth,
-	leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
-        {use=frametitle,fg=frametitle.bg.bg=frametitle.fg}%
+    [wd=1\paperwidth,sep=0.02\paperwidth,
+	  leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
+    {inverse frametitle}%
     \parbox[b][0.16\paperwidth]{0.68\paperwidth}{%
       \raggedleft
       {\usebeamerfont{title}\inserttitle\strut\par}%
@@ -122,9 +124,9 @@
 \defbeamertemplate{frametitle}{ibadai-frametitle}{%
   \nointerlineskip
   \begin{beamercolorbox}%
-        [wd=1\paperwidth,sep=0.01\paperwidth,
-	leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
-        {frametitle}%
+    [wd=1\paperwidth,sep=0.01\paperwidth,
+	  leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
+    {frametitle}%
     \usebeamerfont{frametitle}\insertframetitle\strut\par
     \ifx\insertframesubtitle\@empty%
     \else%

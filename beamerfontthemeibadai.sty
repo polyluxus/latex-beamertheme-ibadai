@@ -1,20 +1,14 @@
-
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerfontthemeibadai}[2016/12/12]  
-
-\RequirePackage{etoolbox}
+\ProvidesPackage{beamerfontthemeibadai}[2018/09/11 v1.1 Ibadai - A font scheme for the beamertheme Mito]  
 
 \providetoggle{poster}
 
 \DeclareOption{beamer}{\togglefalse{poster}}
 \DeclareOption{poster}{\toggletrue{poster}}
-\DeclareOption*{\PackageWarning{beamerthemeMito}{Unknown ‘\CurrentOption’}}
+\DeclareOption*{\PackageWarning{beamerfontthemeibadai}{Unknown ‘\CurrentOption’}}
 \ProcessOptions\relax
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\usefonttheme{default} %fallback
 
 \iftoggle{poster}{%
   \def\familydefault{\rmdefault}

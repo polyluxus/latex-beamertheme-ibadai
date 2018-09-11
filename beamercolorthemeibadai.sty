@@ -1,12 +1,5 @@
-
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamercolorthemeibadai}[2016/12/12]  
-
-%%%%%
-% Required packages to be loaded
-%
-\RequirePackage{xcolor}
-\RequirePackage{etoolbox}
+\ProvidesPackage{beamercolorthemeibadai}[2018/09/11 v1.1 Ibadai - A color scheme for the beamertheme Mito]  
 
 %%%%%
 % Create toggles for options
@@ -19,11 +12,9 @@
 \DeclareOption{light}{\toggletrue{light}}
 \DeclareOption{dark}{\togglefalse{light}}
 \DeclareOption{poster}{\togglefalse{light}}
-\DeclareOption*{\PackageWarning{beamerthemeMito}{Unknown ‘\CurrentOption’}}
+\DeclareOption*{\PackageWarning{beamercolorthemeibadai}{Unknown ‘\CurrentOption’}}
 \ExecuteOptions{dark}
 \ProcessOptions\relax
-
-
 
 %%%%%
 % Define colours
@@ -35,8 +26,6 @@
 \definecolor{IbLgtGreen}   {RGB}{047, 139, 011}
 \definecolor{IbDrkGreen}   {RGB}{024, 083, 011}
 %\definecolor{IbTemplate}   {RGB}{000, 000, 000}
-
-\usecolortheme{default} %fallback
 
 %%%%%
 % Define colours for palettes if used with different theme
@@ -77,3 +66,4 @@
 
 \setbeamercolor{footline}{parent=palette quaternary}
 
+\setbeamercolor{inverse frametitle}{use=frametitle,fg=frametitle.bg,bg=frametitle.fg}
