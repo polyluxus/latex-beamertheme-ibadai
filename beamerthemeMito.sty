@@ -1,4 +1,3 @@
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerthemeMito}[2018/09/11 v1.1dev Mito - A theme for the beamer class]  
 
@@ -86,9 +85,9 @@
 % the title for a poster
 \defbeamertemplate{headline}{ibadai-poster}{%
   \begin{beamercolorbox}%
-        [wd=1\paperwidth,sep=0.02\paperwidth,
-	leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
-        {use=frametitle,fg=frametitle.bg.bg=frametitle.fg}%
+    [wd=1\paperwidth,sep=0.02\paperwidth,
+	  leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
+    {inverse frametitle}%
     \parbox[b][0.16\paperwidth]{0.68\paperwidth}{%
       \raggedleft
       {\usebeamerfont{title}\inserttitle\strut\par}%
@@ -119,9 +118,9 @@
 \defbeamertemplate{frametitle}{ibadai-frametitle}{%
   \nointerlineskip
   \begin{beamercolorbox}%
-        [wd=1\paperwidth,sep=0.01\paperwidth,
-	leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
-        {frametitle}%
+    [wd=1\paperwidth,sep=0.01\paperwidth,
+	  leftskip=0.01\paperwidth,rightskip=0.01\paperwidth]%
+    {frametitle}%
     \usebeamerfont{frametitle}\insertframetitle\strut\par
     \ifx\insertframesubtitle\@empty%
     \else%
