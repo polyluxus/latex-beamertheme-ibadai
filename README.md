@@ -12,7 +12,9 @@ There are a few options, which can be used to change the layouts.
 Demonstration files are comtained in [`/demo/`](./demo); 
 for convenience, some screenshots are detailed below.
 
-This is currently awaiting [a review on codereview stack exchange](https://codereview.stackexchange.com/q/188168/92423).
+It has been reviewed on [codereview stack exchange](https://codereview.stackexchange.com/q/188168/92423),
+and suggested changes have been implemented.
+Since all these changes are _'under the hood'_ I have not updated the previews.
 
 ## Installation
 
@@ -22,12 +24,13 @@ Most easily this is the source directory of the document
 which is going to be compiled.
 Therefore the demonstration directory containes symbolic links
 to the main directory's files.
+Alternatively store them in you local texmf folder.
 
 ## Usage
 
 The following minimum working example exemplarily shows how to use this repository.
 
-```
+```tex
 \documentclass[10pt]{beamer}
 
 \usetheme{Mito}
@@ -72,7 +75,7 @@ An alternative titlepage can be requested.
 The package also includes a style for a poster.
 
 This is done by setting
-```
+```tex
 \usetheme[option]{Mito}
 ```
 
@@ -110,5 +113,8 @@ I am not a professional, so this might be buggy -
 Obviously you are free to adapt any of the contents and use it to your liking.
 If you find bugs or unclean code, I would appreciate a note.
 
-(Current: 2018-02-19; Martin)
+This project is licensed under 
+[creative commons Attribution-ShareAlike 4.0 International](LICENSE.md).
+
+(Current: 2018-09-11; Martin)
 
