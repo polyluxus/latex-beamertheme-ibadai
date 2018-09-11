@@ -7,6 +7,16 @@
 \RequirePackage{adjustbox}
 
 %%%%%
+% Load subpackages, predefined fonts and colours
+%
+% Both themes (dark/light) use the same palette,
+% the difference is only that the templates for 
+% the title(s) switch fg and bg, dark is loaded by default (see below)
+%
+\usecolortheme{ibadai}
+\usefonttheme{ibadai}
+
+%%%%%
 % Create toggles for options
 %
 \providetoggle{poster}
@@ -16,11 +26,11 @@
 %%%%%
 % List options
 %
-\DeclareOption{beamer}{\togglefalse{poster}}
+\DeclareOption{beamer}{\PassOptionsToPackage{beamer}{beamerfontthemeibadai}}
 \DeclareOption{alttitle}{\toggletrue{alternativetitle}}
-\DeclareOption{poster}{\toggletrue{poster}}
-\DeclareOption{light}{\toggletrue{light}}
-\DeclareOption{dark}{\togglefalse{light}}
+\DeclareOption{poster}{\PassOptionsToPackage{poster}{beamerfontthemeibadai}}
+\DeclareOption{light}{\PassOptionsToPackage{light}{beamercolorthemeibadai}}
+\DeclareOption{dark}{\PassOptionsToPackage{dark}{beamercolorthemeibadai}}
 \DeclareOption*{\PackageWarning{beamerthemeMito}{Unknown ‘\CurrentOption’}}
 \ExecuteOptions{beamer,dark}
 \ProcessOptions\relax
@@ -30,26 +40,6 @@
 %
 \newlength{\normaltextsize}
 \AtBeginDocument{\setlength{\normaltextsize}{\f@size pt}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%
-% Predefined Fonts and Colours
-%
-% Both themes (dark/light) use the same palette,
-% the difference is only that the templates for 
-% the title(s) switch fg and bg
-\iftoggle{light}{
-  \usecolortheme[light]{ibadai}
-}{%
-  \usecolortheme{ibadai}
-}
-% Poster uses larger fonts for title, author, etc
-\iftoggle{poster}{%
-  \usefonttheme[poster]{ibadai}
-}{%
-  \usefonttheme[beamer]{ibadai}
-}
 
 %%%%%
 % Modify Inner theme
